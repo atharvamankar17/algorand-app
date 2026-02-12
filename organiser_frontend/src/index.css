@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 17% 98%;
+    --foreground: 210 11% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+
+    --primary: 216 98% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 17% 96%;
+    --secondary-foreground: 210 11% 15%;
+
+    --muted: 210 17% 96%;
+    --muted-foreground: 210 7% 46%;
+
+    --accent: 210 17% 96%;
+    --accent-foreground: 210 11% 15%;
+
+    --destructive: 354 70% 54%;
+    --destructive-foreground: 0 0% 100%;
+
+    --positive: 152 72% 31%;
+    --positive-foreground: 0 0% 100%;
+
+    --warning: 45 100% 51%;
+    --warning-foreground: 210 11% 15%;
+
+    --surface-alt: 210 17% 96%;
+
+    --border: 210 14% 89%;
+    --input: 210 14% 89%;
+    --ring: 216 98% 52%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 16% 8%;
+    --foreground: 210 17% 93%;
+
+    --card: 215 14% 13%;
+    --card-foreground: 210 17% 93%;
+
+    --popover: 215 14% 13%;
+    --popover-foreground: 210 17% 93%;
+
+    --primary: 208 91% 64%;
+    --primary-foreground: 220 16% 8%;
+
+    --secondary: 213 11% 19%;
+    --secondary-foreground: 210 17% 93%;
+
+    --muted: 213 11% 19%;
+    --muted-foreground: 210 7% 46%;
+
+    --accent: 213 11% 19%;
+    --accent-foreground: 210 17% 93%;
+
+    --destructive: 355 71% 46%;
+    --destructive-foreground: 210 17% 93%;
+
+    --positive: 152 48% 35%;
+    --positive-foreground: 210 17% 93%;
+
+    --warning: 43 68% 51%;
+    --warning-foreground: 220 16% 8%;
+
+    --surface-alt: 213 11% 19%;
+
+    --border: 210 11% 23%;
+    --input: 210 11% 23%;
+    --ring: 208 91% 64%;
+
+    --sidebar-background: 220 16% 8%;
+    --sidebar-foreground: 210 17% 93%;
+    --sidebar-primary: 208 91% 64%;
+    --sidebar-primary-foreground: 220 16% 8%;
+    --sidebar-accent: 213 11% 19%;
+    --sidebar-accent-foreground: 210 17% 93%;
+    --sidebar-border: 210 11% 23%;
+    --sidebar-ring: 208 91% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Mobile-first: max app width for desktop */
+  #root {
+    @apply mx-auto max-w-md min-h-screen;
+  }
+}
+
+@layer utilities {
+  .text-positive {
+    color: hsl(var(--positive));
+  }
+  .text-warning {
+    color: hsl(var(--warning));
+  }
+  .bg-surface-alt {
+    background-color: hsl(var(--surface-alt));
+  }
+  .shadow-card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .dark .shadow-card {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  }
+}
+

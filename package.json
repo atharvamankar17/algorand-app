@@ -1,0 +1,14 @@
+{
+  "name": "algorand-app",
+  "version": "1.0.0",
+  "description": "Algorand application platform with event management",
+  "private": true,
+  "scripts": {
+    "install-all": "echo 'Installing backend, user_frontend and organiser_frontend dependencies...' && cd backend && npm install && cd ../user_frontend && npm install && cd ../organiser_frontend && npm install && cd ..",
+    "dev-backend": "cd backend && npm start",
+    "dev-user": "cd user_frontend && npm run dev",
+    "dev-organiser": "cd organiser_frontend && npm run dev",
+    "build-user": "cd user_frontend && npm run build",
+    "build-organiser": "cd organiser_frontend && npm run build"
+  }
+}
