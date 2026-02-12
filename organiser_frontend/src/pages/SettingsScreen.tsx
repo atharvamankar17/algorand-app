@@ -3,12 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
 import { useWallet } from '@/contexts/WalletContext';
-import { Copy, Check } from 'lucide-react';
+import { useTheme } from '@/contexts/ThemeContext';
+import { Copy, Check, Moon, Sun } from 'lucide-react';
 import { useState } from 'react';
 
 export default function SettingsScreen() {
   const { walletAddress, disconnect } = useWallet();
+  const { theme, toggleTheme } = useTheme();
   const [copied, setCopied] = useState(false);
 
   const handleCopyAddress = () => {
@@ -67,6 +70,26 @@ export default function SettingsScreen() {
             ) : (
               <p className="text-sm text-muted-foreground">No wallet connected</p>
             )}
+          </CardContent>
+        </Card>
+
+        {/* Appearance Settings */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Appearance</CardTitle>
+            <CardDescription>Customize the app appearance</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="space-y-0.5">
+                <Label>Dark Mode</Label>
+                <p className="text-sm text-muted-foreground">Toggle between light and dark themes</p>
+              </div>
+              <Switch
+                checked={theme === 'dark'}
+                onCheckedChange={toggleTheme}
+              />
+            </div>
           </CardContent>
         </Card>
 
